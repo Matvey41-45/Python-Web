@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>My Blog</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="top-nav">
+        {% if current_user.is_authenticated %}
+            <a href="{{ url_for('add_post') }}" class="btn-link">Add New Post</a>
+            <a href="{{ url_for('logout') }}" class="btn-link">Logout</a>
+        {% else %}
+            <a href="{{ url_for('login') }}" class="btn-link">Login</a>
+            <a href="{{ url_for('register') }}" class="btn-link">Register</a>
+        {% endif %}
+    </div>
+
+    <h1 class="main-title">My Blog</h1>
+
+    <div class="blog-container">
+        {% for post in posts %}
+            <div class="card">
+                <h2><a href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a></h2>
+                <p class="content">{{ post.content }}</p>
+
+                <div class="card-footer">
+                    <div class="actions">
+                        {% if current_user.is_authenticated %}
+                            <a href="{{ url_for('like_post', post_id=post.id) }}" class="like-btn">
+                                {% if post.id in post.liked_posts %}
+                                    <img src="{{ url_for('static', filename='like.png') }}" class="icon" alt="Liked">
+                                {% else %}
+                                    <img src="{{ url_for('static', filename='no_like.png') }}" class="icon" alt="Not Liked">
+                                {% endif %}
+                                <span class="like-count">{{ post.likes }}</span>
+                            </a>
+                        {% else %}
+                            <a href="{{ url_for('login') }}" class="like-btn">
+                                <img src="{{ url_for('static', filename='no_like.png') }}" class="icon" alt="Not Liked">
+                                <span class="like-count">{{ post.likes }}</span>
+                            </a>
+                        {% endif %}
+
+                        <a href="{{ url_for('post', post_id=post.id) }}" class="search-btn">
+                            <img src="{{ url_for('static', filename='search.png') }}" class="icon" alt="View" onerror="this.style.display='none'">
+                        </a>
+                    </div>
+
+                    <div class="author">
+                        By: {{ post.username }}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

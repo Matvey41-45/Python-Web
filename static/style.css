@@ -1,0 +1,178 @@
+body {
+    background-color: #f7e9a0; /* Жёлтый фон страницы */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.top-nav {
+    text-align: right;
+    padding-right: 40px;
+    margin-bottom: 20px;
+}
+
+.btn-link {
+    color: #2b4c10;
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: opacity 0.2s ease;
+}
+
+.btn-link:hover {
+    opacity: 0.75;
+}
+
+.main-title {
+    text-align: center;
+    font-size: 38px;
+    color: #2b4c10;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.blog-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Карточки постов и форм */
+.card {
+    background-color: #ffffff;
+    border: 1px solid #d4c578;
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+.card h2 {
+    margin-top: 0;
+    font-size: 22px;
+}
+
+.card h2 a {
+    color: #111;
+    text-decoration: none;
+}
+
+.card .content {
+    color: #333;
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.like-btn, .search-btn {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+}
+
+.icon {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    vertical-align: middle;
+}
+
+.like-count {
+    margin-left: 6px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.author {
+    font-size: 13px;
+    color: #555;
+}
+
+/* Стили для формы создания/редактирования */
+
+.form-title {
+    margin-top: 0;
+    margin-bottom: 24px;
+    font-size: 24px;
+    color: #2b4c10;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    font-size: 14px;
+    color: #2b4c10;
+    margin-bottom: 8px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 16px;
+    font-size: 15px;
+    font-family: inherit;
+    border: 1px solid #d4c578;
+    border-radius: 8px;
+    background-color: #fafafa;
+    outline: none;
+    transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #2b4c10;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(43, 76, 16, 0.12);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 24px;
+}
+
+.btn-submit {
+    background-color: #2b4c10;
+    color: #ffffff;
+    border: none;
+    padding: 12px 28px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-submit:hover {
+    background-color: #3d6b17;
+}
+
+.btn-submit:active {
+    transform: scale(0.98);
+}
